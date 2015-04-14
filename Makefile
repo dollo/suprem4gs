@@ -45,7 +45,7 @@ DATADIR = $(HERE)/data
 #CC	= cc
 CC	= gcc
 #FC	= f77
-FC	= g77
+FC	= gfortran
 
 #.. What optimization level for the compilers?
 COPT	= -O2

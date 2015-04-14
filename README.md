@@ -13,11 +13,13 @@ Actually it builds on:
 
 * Fedora 20 x86-64
 * Fedora 20 x86
+* Archlinux x86-64
 
 And it runs on:
 
 * Fedora 20 x86-64
 * Fedora 20 x86
+* Archlinux x86-64
 * Ubuntu 13.10 x86-64
 
 If you find other supported operating systems, please, fill an issue with
@@ -27,9 +29,31 @@ instructions.
 
 ### Fedora
 
-    sudo yum install gcc compat-gcc-34-g77
-    make depend install
-    ./suprem4gs
+	# yum install gcc gfortran
+	$ make depend install
+	$ ./suprem4gs
+
+## Archlinux
+
+	# pacman -S gcc gcc-fortran 
+	or if x86-64
+	# pacman -S gcc-multilib gcc-fortran-multilib	
+
+Setting the enviroment. 
+	Edit /etc/loacle.gen.
+	# nano /etc/locale.gen
+	Search and uncomment de_DE.utf8. 
+	Then, update locale
+	# locale.gen
+
+Compile suprem:
+	$ make depend install
+	$ ./suprem
+
+Extra: to execute it from everywhere, run this inside the suprem directory
+	$ cd "your_suprem_directory"
+	$ export PATH=$PATH:.
+	# ln -s suprem4gs /usr/bin/suprem4gs
 
 ## Original README
 
